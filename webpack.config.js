@@ -10,9 +10,9 @@ module.exports = {
           "options": {
             "presets": [
               "babel-preset-env",
-              "babel-preset-react",
-              "stage-0"
-            ]
+              "babel-preset-react"
+            ],
+	    "plugins": ["babel-plugin-transform-object-rest-spread"]
           }
         },
         "exclude": /node_modules/,
@@ -20,7 +20,5 @@ module.exports = {
       }
     ]
   },
-  "entry": {
-    "index": "./index"
-  }
+  "entry": ["babel-polyfill", "./index"]
 };

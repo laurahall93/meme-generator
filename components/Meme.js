@@ -30,18 +30,21 @@ export default function Meme() {
     function getMemeImage() {
         const randomNumber = Math.floor(Math.random() * allMemes.length)
         const url = allMemes[randomNumber].url
-        setMeme(prevMeme => ({
-            ...prevMeme,
+        setMeme(prevMeme => {
+            return {
+                ...prevMeme,
             randomImage: url
-        }))
+            
+         }})
     }
     
     function handleChange(event) {
         const {name, value} = event.target
-        setMeme(prevMeme => ({
+        setMeme(prevMeme => {
+            return {
             ...prevMeme,
             [name]: value
-        }))
+        }})
     }
     
     return (
